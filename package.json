@@ -1,0 +1,54 @@
+{
+  "name": "cdcloud",
+  "version": "0.0.1",
+  "homepage": "https://github.com/CDTeamMods/CDCloud#readme",
+  "bugs": {
+    "url": "https://github.com/CDTeamMods/CDCloud/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CDTeamMods/CDCloud.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "CDTeamMods",
+    "url": "https://github.com/CDTeamMods"
+  },
+  "engines": {
+    "npm": "please-use-yarn",
+    "yarn": ">= 1.22.22"
+  },
+  "type": "module",
+  "main": "./src/main.mjs",
+  "scripts": {
+    "start": "electron-vite preview",
+    "dev": "electron-vite dev",
+    "prebuild": "electron-vite build",
+    "lint": "eslint .{mjs,json} --fix",
+    "prepare": "husky",
+    "lint-staged": "lint-staged",
+    "format": "prettier . --write"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "electron": "^39.1.2",
+    "vite": "^7.2.2"
+  },
+  "devDependencies": {
+    "@eslint/json": "^0.14.0",
+    "electron-vite": "^4.0.1",
+    "eslint": "^9.39.1",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "*.{mjs,json}": [
+      "prettier . --write",
+      "eslint . --fix",
+      "git add"
+    ]
+  }
+}
